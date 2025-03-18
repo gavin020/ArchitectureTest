@@ -1,24 +1,67 @@
-// Basis 3D-ontwerptool met Three.js
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, 800 / 400, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(800, 400);
-document.getElementById('canvas-container').appendChild(renderer.domElement);
-
-// Voeg een eenvoudige kubus toe als model
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-
-// Positioneer de camera
-camera.position.z = 5;
-
-// Animatie om de kubus te roteren
-function animate() {
-    requestAnimationFrame(animate);
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    renderer.render(scene, camera);
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
-animate();
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+#design-tool, #inspiration {
+    padding: 20px;
+    text-align: center;
+}
+
+#controls {
+    margin-bottom: 10px;
+}
+
+#controls button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#controls button:hover {
+    background-color: #0056b3;
+}
+
+#canvas-container {
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-item p {
+    margin: 5px 0;
+}
