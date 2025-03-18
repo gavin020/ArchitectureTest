@@ -19,6 +19,13 @@
             <button onclick="addDoor()">Deur toevoegen</button>
             <button onclick="addFurniture()">Stoel toevoegen</button>
             <button onclick="saveDesign()">Ontwerp opslaan</button>
+            <button onclick="explodeMesh()">Explode Mesh</button>
+            <button onclick="resetScene()">Reset</button>
+        </div>
+        <div id="color-ui">
+            <h3>Geselecteerd object: <span id="selected-object">Geen</span></h3>
+            <label for="color-picker">Kies een kleur:</label>
+            <input type="color" id="color-picker" onchange="changeColor()">
         </div>
         <div id="canvas-container"></div>
     </section>
